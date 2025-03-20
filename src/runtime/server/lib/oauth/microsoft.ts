@@ -88,6 +88,7 @@ export function defineOAuthMicrosoftEventHandler({ config, onSuccess, onError }:
           response_type: 'code',
           redirect_uri: redirectURL,
           scope: config.scope.join(' '),
+          state: query.state || "",//this for microsoft return state params...
           ...config.authorizationParams,
         }),
       )
